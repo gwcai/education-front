@@ -66,15 +66,55 @@ export const constantRouterMap = [
     ]
   },
   {
-    path: '/guide',
+    path:'/classes',
     component: Layout,
-    redirect: '/guide/index',
+    redirect: '/classes/index',
+    meta:{ title: 'classes', icon: 'table', noCache: true},
     children: [
       {
         path: 'index',
-        component: () => import('@/views/guide/index'),
-        name: 'Guide',
-        meta: { title: 'guide', icon: 'guide', noCache: true }
+        component: () => import('@/views/classes/index'),
+        name: 'Classes',
+        meta: { title: 'classes', icon: 'table', noCache: true }
+      }
+      ]
+  },
+  {
+    path: '/teacher',
+    component: Layout,
+    redirect: '/teacher/index',
+    children: [
+      {
+        path: 'teacher',
+        component: () => import('@/views/teacher/index'),
+        name: 'Teacher',
+        meta: { title: 'teacher', icon: 'list', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/student',
+    component: Layout,
+    redirect: '/student/index',
+    children: [
+      {
+        path: 'student',
+        component: () => import('@/views/student/index'),
+        name: 'Students',
+        meta: { title: 'student', icon: 'list', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/course',
+    component: Layout,
+    redirect: '/course/index',
+    children: [
+      {
+        path: 'course',
+        component: () => import('@/views/course/index'),
+        name: 'Course',
+        meta: { title: 'course', icon: 'list', noCache: true }
       }
     ]
   }

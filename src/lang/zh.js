@@ -1,6 +1,10 @@
 export default {
   route: {
     dashboard: '首页',
+    classes:'班级管理',
+    teacher: '教师管理',
+    student: '学生管理',
+    course:'课程管理',
     introduction: '简述',
     documentation: '文档',
     guide: '引导页',
