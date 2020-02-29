@@ -61,63 +61,81 @@ export const constantRouterMap = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+        meta: { title: 'dashboard', icon: 'dashboard' }
       }
     ]
   },
   {
-    path:'/classes',
+    path:'/basicInfo',
     component: Layout,
-    redirect: '/classes/index',
-    meta:{ title: 'classes', icon: 'table', noCache: true},
+    name:'BasicInfo',
+    meta:{ title: 'basicInfo', icon: 'table'},
     children: [
       {
-        path: 'index',
-        component: () => import('@/views/classes/index'),
+        path: 'classes',
+        component: () => import('@/views/basicInfo/classes/index'),
         name: 'Classes',
-        meta: { title: 'classes', icon: 'table', noCache: true }
+        meta: { title: 'classes', icon: 'table' }
+      },
+      {
+        path: 'teacher',
+        component: () => import('@/views/basicInfo/teacher/index'),
+        name: 'Teacher',
+        meta: { title: 'teacher', icon: 'list' }
+      },
+      {
+        path: 'student',
+        component: () => import('@/views/basicInfo/student/index'),
+        name: 'Students',
+        meta: { title: 'student', icon: 'list' }
+      },
+      {
+        path: 'course',
+        component: () => import('@/views/basicInfo/course/index'),
+        name: 'Course',
+        meta: { title: 'course', icon: 'list' }
       }
       ]
   },
   {
-    path: '/teacher',
+    path: '/classInfo',
     component: Layout,
-    redirect: '/teacher/index',
-    children: [
-      {
-        path: 'teacher',
-        component: () => import('@/views/teacher/index'),
-        name: 'Teacher',
-        meta: { title: 'teacher', icon: 'list', noCache: true }
-      }
-    ]
-  },
-  {
-    path: '/student',
-    component: Layout,
-    redirect: '/student/index',
+    name: 'ClassInfo',
+    meta: { title: 'classInfo', icon: 'table' },
     children: [
       {
         path: 'student',
-        component: () => import('@/views/student/index'),
-        name: 'Students',
-        meta: { title: 'student', icon: 'list', noCache: true }
+        component: () => import('@/views/classInfo/classStudent/index'),
+        name: 'ClassStudent',
+        meta: { title: 'classStudent', icon: 'list' }
+      },
+      {
+        path: 'schedule',
+        component: () => import('@/views/classInfo/schedule/index'),
+        name: 'ClassSchedule',
+        meta: { title: 'classSchedule', icon: 'list' }
+      },
+      {
+        path: 'attendance',
+        component: () => import('@/views/classInfo/attendance/index'),
+        name: 'Attendance',
+        meta: { title: 'attendance', icon: 'list' }
       }
     ]
   },
-  {
-    path: '/course',
-    component: Layout,
-    redirect: '/course/index',
-    children: [
-      {
-        path: 'course',
-        component: () => import('@/views/course/index'),
-        name: 'Course',
-        meta: { title: 'course', icon: 'list', noCache: true }
-      }
-    ]
-  }
+  // {
+  //   path: '/guide',
+  //   component: Layout,
+  //   redirect: '/guide/index',
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/guide/index'),
+  //       name: 'Guide',
+  //       meta: { title: 'guide', icon: 'guide', noCache: true }
+  //     }
+  //   ]
+  // }
 ]
 
 export default new Router({
