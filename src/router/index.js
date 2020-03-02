@@ -94,32 +94,38 @@ export const constantRouterMap = [
         component: () => import('@/views/basicInfo/course/index'),
         name: 'Course',
         meta: { title: 'course', icon: 'list' }
+      },
+      {
+        path: 'card',
+        component: () => import('@/views/basicInfo/cardMngr/index'),
+        name: 'CardMngr',
+        meta: { title: 'cardMngr', icon: 'list' }
       }
       ]
   },
   {
-    path: '/classInfo',
+    path: '/teachingMngr',
     component: Layout,
-    name: 'ClassInfo',
-    meta: { title: 'classInfo', icon: 'table' },
+    name: 'TeachingMngr',
+    meta: { title: 'teachingMngr', icon: 'table' },
     children: [
       {
-        path: 'student',
-        component: () => import('@/views/classInfo/classStudent/index'),
-        name: 'ClassStudent',
-        meta: { title: 'classStudent', icon: 'list' }
-      },
-      {
         path: 'schedule',
-        component: () => import('@/views/classInfo/schedule/index'),
-        name: 'ClassSchedule',
-        meta: { title: 'classSchedule', icon: 'list' }
+        component: () => import('@/views/teachingMngr/schedule/index'),
+        name: 'Schedule',
+        meta: { title: 'schedule', icon: 'list' }
       },
       {
         path: 'attendance',
-        component: () => import('@/views/classInfo/attendance/index'),
+        component: () => import('@/views/teachingMngr/attendance/index'),
         name: 'Attendance',
         meta: { title: 'attendance', icon: 'list' }
+      },
+      {
+        path: 'leave',
+        component: () => import('@/views/teachingMngr/leave/index'),
+        name: 'Leave',
+        meta: { title: 'leave', icon: 'list' }
       }
     ]
   },

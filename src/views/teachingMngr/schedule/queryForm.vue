@@ -1,10 +1,10 @@
 <template>
   <el-form :model="queryForm" ref="queryForm" :inline="true">
     <el-form-item label="班级" label-width="120px" prop="name">
-      <el-input v-model="queryForm.className" autocomplete="off" ></el-input>
+      <el-input v-model="queryForm.classNo" autocomplete="off" ></el-input>
     </el-form-item>
-    <el-form-item label="学生姓名" label-width="120px" prop="idNo">
-      <el-input v-model="queryForm.name" autocomplete="off"></el-input>
+    <el-form-item label="教师姓名" label-width="120px" prop="idNo">
+      <el-input v-model="queryForm.teacherId" autocomplete="off"></el-input>
     </el-form-item>
     <el-form-item>
       <el-button type="warning" @click="doReset">重置</el-button>

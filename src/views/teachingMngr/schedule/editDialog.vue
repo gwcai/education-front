@@ -1,35 +1,43 @@
 <template>
   <el-dialog :title="title" :visible.sync="visible" :before-close="closeDialog" :close-on-click-modal="false">
     <el-form :model="form" ref="form" :rules="rules">
-      <el-form-item label="学生姓名" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off"></el-input>
-      </el-form-item>
       <el-form-item label="班级" :label-width="formLabelWidth">
-        <el-select v-model="form.classNo" placeholder="请选择性别">
+        <el-select v-model="form.classNo" placeholder="请选择班级">
           <el-option label="拉丁舞一班" value="0"></el-option>
           <el-option label="拉丁舞二班" value="1"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="办卡类型" :label-width="formLabelWidth">
-        <el-input v-model="form.cardInfo" autocomplete="off"></el-input>
+      <el-form-item label="上课日期" :label-width="formLabelWidth">
+        <el-date-picker
+          v-model="form.classDate" type="date" placeholder="选择上课日期">
+        </el-date-picker>
       </el-form-item>
-      <el-form-item label="课时" :label-width="formLabelWidth">
-        <el-input v-model="form.classTimes" autocomplete="off"></el-input>
+      <el-form-item label="开始时间" :label-width="formLabelWidth">
+        <el-time-select
+          v-model="form.startTime"
+          :picker-options="{
+            selectableRange: '8:30:00 - 20:30:00'
+          }"
+          placeholder="选择时间">
+        </el-time-select>
       </el-form-item>
-      <el-form-item label="允许请假次数" :label-width="formLabelWidth">
-        <el-input v-model="form.askForLeave" autocomplete="off"></el-input>
+      <el-form-item label="结束时间" :label-width="formLabelWidth">
+        <el-time-select
+          v-model="form.endTime"
+          :picker-options="{
+            selectableRange: '8:30:00 - 23:30:00'
+          }"
+          placeholder="选择时间">
+        </el-time-select>
       </el-form-item>
-      <el-form-item label="已请假次数" :label-width="formLabelWidth">
-        <el-input v-model="form.leaveTimes" autocomplete="off"></el-input>
+      <el-form-item label="课次" :label-width="formLabelWidth">
+        <el-input v-model="form.courseTimes" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="入学时间" :label-width="formLabelWidth">
-        <el-input v-model="form.enterDate" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="毕业时间" :label-width="formLabelWidth">
-        <el-input v-model="form.graduateDate" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="卡状态" :label-width="formLabelWidth">
-        <el-input v-model="form.status" autocomplete="off"></el-input>
+      <el-form-item label="上课老师" :label-width="formLabelWidth">
+        <el-select v-model="form.teacherId" placeholder="请选择老师">
+          <el-option label="王老师" value="0"></el-option>
+          <el-option label="李老师" value="1"></el-option>
+        </el-select>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer" v-if="editable">

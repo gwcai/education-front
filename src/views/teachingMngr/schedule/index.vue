@@ -6,15 +6,22 @@
       <el-table-column prop="id" label="主键" width="180"></el-table-column>
       <el-table-column prop="classNo" label="班级编号" width="180"></el-table-column>
       <el-table-column prop="className" label="班级名称" width="180"></el-table-column>
-      <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-      <el-table-column prop="cardType" label="办卡情况" width="180"></el-table-column>
-      <el-table-column prop="classTimes" label="课时" width="180"></el-table-column>
-      <el-table-column prop="askForLeave" label="允许请假次数" width="180"></el-table-column>
-      <el-table-column prop="leaveTimes" label="已请假次数" width="180"></el-table-column>
-      <el-table-column prop="status" label="卡状态" width="180"></el-table-column>
-      <el-table-column prop="enterDate" label="入学时间" width="180"></el-table-column>
-      <el-table-column prop="graduateDate" label="毕业时间" width="180"></el-table-column>
+      <el-table-column prop="classDate" label="上课日期" width="180"></el-table-column>
+      <el-table-column prop="startTime" label="开始时间" width="180"></el-table-column>
+      <el-table-column prop="endTime" label="结束时间" width="180"></el-table-column>
+      <el-table-column prop="courseTimes" label="课次" width="180"></el-table-column>
+      <el-table-column prop="teacherName" label="上课老师" width="180"></el-table-column>
       <el-table-column prop="createDate" label="创建日期" width="180"></el-table-column>
+
+      <el-table-column
+        label="上下课"
+        fixed="right"
+        width="150">
+        <template slot-scope="scope">
+          <el-button @click="doStart(scope.row)" type="primary" size="small">上课</el-button>
+          <el-button @click="doFinish(scope.row)" type="warning" size="small">下课</el-button>
+        </template>
+      </el-table-column>
 
       <el-table-column
         fixed="right"
@@ -37,7 +44,7 @@
   import QueryForm from "./queryForm";
 
   export default {
-    name: "ClassStudent",
+    name: "Schedule",
     components: {EditDialog, QueryForm },
     data(){
       return {
@@ -66,6 +73,12 @@
       },
       doDelete(row){
         //TODO
+      },
+      doStart(row){
+
+      },
+      doFinish(row){
+
       },
       updateDialogVisible(val){
         this.dialogVisible = val;

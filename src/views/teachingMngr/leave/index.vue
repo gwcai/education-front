@@ -6,14 +6,12 @@
       <el-table-column prop="id" label="主键" width="180"></el-table-column>
       <el-table-column prop="classNo" label="班级编号" width="180"></el-table-column>
       <el-table-column prop="className" label="班级名称" width="180"></el-table-column>
-      <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-      <el-table-column prop="cardType" label="办卡情况" width="180"></el-table-column>
-      <el-table-column prop="classTimes" label="课时" width="180"></el-table-column>
-      <el-table-column prop="askForLeave" label="允许请假次数" width="180"></el-table-column>
-      <el-table-column prop="leaveTimes" label="已请假次数" width="180"></el-table-column>
-      <el-table-column prop="status" label="卡状态" width="180"></el-table-column>
-      <el-table-column prop="enterDate" label="入学时间" width="180"></el-table-column>
-      <el-table-column prop="graduateDate" label="毕业时间" width="180"></el-table-column>
+      <el-table-column prop="studentName" label="姓名" width="180"></el-table-column>
+      <el-table-column prop="classDate" label="上课日期" width="180"></el-table-column>
+      <el-table-column prop="courseTimes" label="课次" width="180"></el-table-column>
+      <el-table-column prop="askDate" label="请假日期" width="180"></el-table-column>
+      <el-table-column prop="cause" label="请假事由" width="180"></el-table-column>
+      <el-table-column prop="contacts" label="联系人" width="180"></el-table-column>
       <el-table-column prop="createDate" label="创建日期" width="180"></el-table-column>
 
       <el-table-column
@@ -37,7 +35,7 @@
   import QueryForm from "./queryForm";
 
   export default {
-    name: "ClassStudent",
+    name: "Leave",
     components: {EditDialog, QueryForm },
     data(){
       return {
